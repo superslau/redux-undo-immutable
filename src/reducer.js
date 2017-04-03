@@ -40,6 +40,7 @@ function undo<S>(history: IStateHistory<S>): IStateHistory<S> {
       past: past.slice(0, past.size - 1),
       present: past.last(),
       future: future.unshift(present),
+      _lastInterestingPresent: past.last(),
     }) :
     history;
 }
