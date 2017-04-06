@@ -52,6 +52,7 @@ function redo<S>(history: IStateHistory<S>): IStateHistory<S> {
       past: past.push(present),
       present: future.first(),
       future: future.slice(1),
+      _lastInterestingPresent: future.first(),
     }) :
     history;
 }
